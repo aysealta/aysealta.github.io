@@ -1,19 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayse Altay</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f7f5;
+      color: #1f1f1f;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background: rgba(17, 17, 17, 0.96) !important;
+    }
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #5f5f5f;
+      max-width: 680px;
+      line-height: 1.8;
+    }
+    .badge-soft {
+      display: inline-block;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: #ece8e1;
+      color: #333;
+      font-size: 0.92rem;
+      margin: 0 0.45rem 0.55rem 0;
+    }
+    .feature-card,
+    .about-card,
+    .post-card {
+      border: 0;
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: #8a8175;
+      margin-bottom: 0.9rem;
+      font-weight: 700;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-text {
+      color: #545454;
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+    .side-note {
+      background: #161616;
+      color: white;
+      border-radius: 22px;
+      padding: 2rem;
+      height: 100%;
+    }
+    .side-note p {
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+    }
+    .custom-btn {
+      border-radius: 999px;
+      padding: 0.8rem 1.2rem;
+      font-weight: 600;
+    }
+    .mini-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .post-card p,
+    .feature-card p {
+      color: #606060;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+    footer {
+      padding: 2.5rem 0 4rem;
+    }
+    .icon-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin: 0 0.4rem;
+      transition: transform 0.2s ease;
+    }
+    .icon-link:hover {
+      transform: translateY(-2px);
+    }
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .profile-card {
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 0.75rem;
+    }
+    .profile-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Ayse Altay</a>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand fw-semibold" href="index.html">Ayse Altay</a>
     <div>
       <a href="index.html" class="btn btn-outline-light btn-sm me-2">Home</a>
       <a href="projects.html" class="btn btn-outline-light btn-sm me-2">Projects</a>
-      <a href="blog.html" class="btn btn-outline-light btn-sm me-2">Blog</a>
+      <a href="blog.html" class="btn btn-outline-light btn-sm">Blog</a>
     </div>
   </div>
 </nav>
