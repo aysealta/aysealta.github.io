@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayse Altay</title>
+  <title>Ayse Altay | Blog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
       background: #f7f7f5;
       color: #1f1f1f;
       font-family: Arial, sans-serif;
     }
+
     .navbar {
       background: rgba(17, 17, 17, 0.96) !important;
     }
+
     .hero {
       padding: 5rem 0 3rem;
     }
+
     .hero-title {
       font-size: clamp(2.4rem, 5vw, 4.4rem);
       font-weight: 700;
@@ -24,12 +28,23 @@
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
+
     .hero-subtitle {
       font-size: 1.1rem;
       color: #5f5f5f;
-      max-width: 680px;
+      max-width: 760px;
       line-height: 1.8;
     }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: #8a8175;
+      margin-bottom: 0.9rem;
+      font-weight: 700;
+    }
+
     .badge-soft {
       display: inline-block;
       padding: 0.45rem 0.85rem;
@@ -39,98 +54,117 @@
       font-size: 0.92rem;
       margin: 0 0.45rem 0.55rem 0;
     }
-    .feature-card,
-    .about-card,
+
+    .section-block {
+      padding-bottom: 4rem;
+    }
+
     .post-card {
       border: 0;
       border-radius: 22px;
       background: #ffffff;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: default;
+      max-width: 950px;
+      margin: auto;
     }
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .image-collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+      background: #ffffff;
+    }
+
+    .image-collage img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .img-top {
+      height: 260px;
+    }
+
+    .img-bottom {
+      grid-column: 1 / -1;
+      height: 340px;
+      object-position: center 65%;
+    }
+
+    .img-left {
+      object-position: center 25%;
+    }
+
+    .img-right {
+      object-position: center 20%;
+    }
+
+    .img-bottom {
+      object-position: center center;
+    }
+
+    .card-body-custom {
+      padding: 1.8rem;
+    }
+
+    .post-meta {
       font-size: 0.78rem;
       color: #8a8175;
-      margin-bottom: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.7rem;
       font-weight: 700;
     }
-    .section-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-    .section-text {
-      color: #545454;
-      line-height: 1.9;
-      font-size: 1.05rem;
-    }
-    .side-note {
-      background: #161616;
-      color: white;
-      border-radius: 22px;
-      padding: 2rem;
-      height: 100%;
-    }
-    .side-note p {
-      color: rgba(255,255,255,0.82);
-      line-height: 1.8;
-    }
-    .custom-btn {
-      border-radius: 999px;
-      padding: 0.8rem 1.2rem;
-      font-weight: 600;
-    }
+
     .mini-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.35;
     }
-    .post-card p,
-    .feature-card p {
+
+    .post-card p {
       color: #606060;
       line-height: 1.8;
       margin-bottom: 0;
+      font-size: 1rem;
     }
+
     footer {
       padding: 2.5rem 0 4rem;
+      color: #666;
+      font-size: 0.95rem;
     }
-    .icon-link {
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      margin: 0 0.4rem;
-      transition: transform 0.2s ease;
-    }
-    .icon-link:hover {
-      transform: translateY(-2px);
-    }
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .profile-card {
-      background: #ffffff;
-      border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      padding: 0.75rem;
-    }
-    .profile-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
+
+    @media (max-width: 768px) {
+      .image-collage {
+        grid-template-columns: 1fr;
+      }
+
+      .img-top,
+      .img-bottom {
+        grid-column: auto;
+        height: 240px;
+      }
+
+      .card-body-custom {
+        padding: 1.4rem;
+      }
     }
   </style>
 </head>
+
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -144,17 +178,77 @@
   </div>
 </nav>
 
-<div class="container mt-5">
-  <h1>Blog</h1>
-
-  <div class="card p-3 mt-3">
-    <!-- <h4>My First Website</h4> -->
-    <p>
-      <!-- This is my first step into building and deploying my own website. -->
+<section class="hero">
+  <div class="container">
+    <div class="section-label">Blog</div>
+    <h1 class="hero-title">What I’ve been up to.</h1>
+    <p class="hero-subtitle">
+      A mix of work, events, and everything in between.
     </p>
   </div>
+</section>
 
-</div>
+<section class="section-block">
+  <div class="container">
+
+    <div class="post-card">
+
+      <div class="post-card mt-4">
+
+      <div class="image-collage">
+        <img src="images/isef2025_1.jpeg" class="img-top img-left" alt="">
+        <img src="images/isef2025_2.jpeg" class="img-top img-right" alt="">
+        <img src="images/isef2025_3.jpeg" class="img-bottom" alt="">
+      </div>
+
+      <div class="card-body-custom">
+        <div class="post-meta">International Event · May 2025</div>
+
+        <div class="mini-title">
+          ISEF 2025 in Columbus
+        </div>
+
+        <p>
+          We brought over 25 student projects to ISEF 2025 in Columbus. One of our students earned First Place in Computational Biology and Bioinformatics. He practiced his presentation with me before judging day, and I remember thinking he had a strong presence, it was incredibly rewarding to see that reflected in the results.
+          <br><br>
+          In addition, seven of our students placed 2nd, 3rd, or 4th in their categories, and seven students received Special Awards, highlighting the overall strength and quality of the work presented.
+        </p>
+      </div>
+
+    </div>
+
+
+
+      <!-- COLLAGE -->
+      <div class="image-collage">
+        <img src="images/cic1.jpg" class="img-top" alt="">
+        <img src="images/cic2.jpg" class="img-top" alt="">
+        <img src="images/cic3.jpg" class="img-bottom" alt="">
+      </div>
+
+      <div class="card-body-custom">
+        <div class="post-meta">Event Experience · May 2025</div>
+
+        <div class="mini-title">
+          Connecticut Invention Convention at UConn
+        </div>
+
+       <p>
+      I had the opportunity to be part of the Connecticut Invention Convention (CIC) at UConn as a judge. It was a great experience to engage with young inventors, listen to their ideas, and observe how they approach problem-solving at an early age.
+
+      Beyond judging, being in that environment offered a closer look at how student-centered innovation events come together from organization and coordination to the energy created by students, educators, and families.
+
+      Experiences like this are always a reminder of how powerful it is to create spaces where students feel encouraged to think, build, and share their ideas.
+      </p>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
